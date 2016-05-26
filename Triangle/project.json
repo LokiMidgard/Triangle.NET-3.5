@@ -1,5 +1,5 @@
 ﻿{
-  "version": "0.0.0-Beta3",
+  "version": "0.0.0-*",
 
   "authors": [ "Christian Woltering" ],
   "packOptions": {
