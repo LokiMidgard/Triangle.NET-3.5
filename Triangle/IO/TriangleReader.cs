@@ -170,8 +170,8 @@ namespace TriangleNet.IO
 
             string[] line;
             int invertices = 0, attributes = 0, nodemarkers = 0;
-
-            using (var reader = new StreamReader(nodefilename))
+            using (var fileStream = new FileStream(nodefilename, FileMode.Open))
+            using (var reader = new StreamReader(fileStream))
             {
                 if (!TryReadLine(reader, out line))
                 {
@@ -282,7 +282,8 @@ namespace TriangleNet.IO
             string[] line;
             int invertices = 0, attributes = 0, nodemarkers = 0;
 
-            using (var reader = new StreamReader(polyfilename))
+            using (var streamreader = new FileStream(polyfilename, FileMode.Open))
+            using (var reader = new StreamReader(streamreader))
             {
                 if (!TryReadLine(reader, out line))
                 {
@@ -506,7 +507,8 @@ namespace TriangleNet.IO
 
             List<ITriangle> triangles;
 
-            using (var reader = new StreamReader(elefilename))
+            using (var stream = new FileStream(elefilename, FileMode.Open))
+            using (var reader = new StreamReader(stream))
             {
                 // Read number of elements and number of attributes.
                 string[] line;
@@ -590,7 +592,8 @@ namespace TriangleNet.IO
         {
             double[] data = null;
 
-            using (var reader = new StreamReader(areafilename))
+            using (var stream = new FileStream(areafilename, FileMode.Open))
+            using (var reader = new StreamReader(stream))
             {
                 string[] line;
 
@@ -643,7 +646,8 @@ namespace TriangleNet.IO
 
             string[] line;
 
-            using (var reader = new StreamReader(edgeFile))
+            using (var stream = new FileStream(edgeFile,FileMode.Open))
+            using (var reader = new StreamReader(stream))
             {
                 // Read the edges from a .edge file.
 

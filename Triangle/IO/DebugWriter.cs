@@ -81,7 +81,7 @@ namespace TriangleNet.IO
             }
 
             this.tmpFile = Path.GetTempFileName();
-            this.stream = new StreamWriter(tmpFile);
+            this.stream = new StreamWriter(new FileStream(tmpFile, FileMode.Append));
         }
 
         /// <summary>
