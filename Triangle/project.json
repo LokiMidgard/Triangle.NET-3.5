@@ -17,6 +17,8 @@
   },
 
   "frameworks": {
+    "net45": { },
+    "net35": {},
     "netstandard1.5": {
       "imports": "dnxcore50"
     }
